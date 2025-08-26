@@ -10,7 +10,7 @@ pipeline {
 
         stage('Clone code') {
             steps{
-                git 'https://github.com/AbuzarAslan/demo-project.git'
+                git 'https://github.com/feyruz-loopcamp/demo-project.git'
             }
         }
 
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn clean test -Dcucumber.filter.tags=\"@smoke\" "
+                        sh "mvn clean test -Dcucumber.filter.tags=\"@smoke\"  "
                     } else {
                         bat "mvn clean test -Dcucumber.filter.tags=\"@smoke\" "
                     }
